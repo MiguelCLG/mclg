@@ -1,0 +1,102 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@media only screen and (max-width:667px)
+{
+	/* sections */
+	.first-section{
+		-webkit-clip-path: polygon(0 0, 100% 0%, 100% 95%, 0% 100%);
+		clip-path: polygon(0 0, 100% 0%, 100% 95%, 0% 100%);
+	}
+	.second-section{
+		clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
+		-webkit-clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
+	}
+	#deve
+	#development-section .bg-gamedev, #development-section .bg-webdev{
+		z-index: 1000;
+	}
+
+	.group {
+		display:block;
+	}
+		.col-footer:first-child { margin-top:32px; }
+}
+@media only screen and (max-width:480px) {
+
+/*----------general----------*/
+
+	h1 {
+		font-size: 2.8rem;
+	}
+
+	h1.text-hand {
+		font-size: 3.8rem;
+	}
+
+	h2 {
+		font-size: 2.2rem;
+	}
+
+	h3 {
+		font-size: 1.8rem;
+	}
+
+	h4 {
+		font-size: 1.6srem;
+	}
+
+	h5 {
+		font-size: 1.3rem;
+	}
+
+	h6 {
+		font-size: 1.1rem;
+	}
+
+	p {
+		font-size: 1.6rem;
+	}
+
+	#logo {
+		bottom: 16px;
+		left: 16px;
+	}
+
+	#logo img {
+		width: 150px;
+		transition: all 0.1s ease-in-out;
+	}
+
+/*----------slideshow-styles----------*/
+
+	.caption {
+		top: 20%;
+		width: 84%;
+	}
+
+	.slider-caption {
+		width: 100%;
+	}
+
+	.caption-quote {
+		width: 100%;
+	}
+
+	.caption-quote-test {
+		width: 100%;
+	}
+
+	.caption img {
+		width: 280px;
+	}
+
+	.caption h1 {
+		font-size: 3.2rem;
+	}
+
+	.caption p {
+		font-size: 1.4rem;
+	}
+
+}

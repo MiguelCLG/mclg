@@ -1,0 +1,136 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@media only screen and (max-width:1025px) {
+
+/*----------general----------*/
+
+	h1 {
+		font-size: 3.6rem;
+	}
+
+	h1.text-hand {
+		font-size: 4.8rem;
+	}
+
+	h2 {
+		font-size: 2.4rem;
+	}
+
+	h3 {
+		font-size: 2rem;
+	}
+
+	h4 {
+		font-size: 1.8rem;
+	}
+
+	h5 {
+		font-size: 1.6rem;
+	}
+
+	h6 {
+		font-size: 1.2rem;
+	}
+
+	p {
+		font-size: 1.4rem;
+	}
+
+	.text-center-mob {
+		text-align: center;
+	}
+
+
+/*----------header----------*/
+
+
+	.header-margin {
+		padding-top: 74px;
+	}
+
+/*----------main-navigation----------*/
+
+	#main-nav {
+		display: none;
+	}
+
+	#menu-open {
+		display: block;
+	}
+
+/*----------sections-page----------*/
+
+	.page-wrapper {
+		max-width:100%;
+	}
+
+	.page-inner-wrapper {
+		width:auto;
+		padding: 6% 6%;
+	}
+
+/*----------slideshow-styles----------*/
+
+	.caption {
+		width: 90%;
+	}
+
+	.slider-caption {
+		width: 100%;
+	}
+
+	.caption img {
+		width: 350px;
+	}
+
+
+	.caption h1 {
+		font-size: 4.2rem;
+	}
+
+	.caption p {
+		font-size: 1.8rem;
+	}
+
+	/*----------sections----------*/
+
+.first-section .section-content, .second-section .section-content, .third-section .section-content{
+	width: 90%;
+}
+.section-content{
+	max-width:667px;
+}
+.first-section{
+	-webkit-clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+	clip-path: polygon(0 0, 100% 0%, 100% 93%, 0% 100%);
+}
+.second-section{
+	clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+	-webkit-clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+}
+#development-section .bg-gamedev, #development-section .bg-webdev{
+	z-index: 1000;
+}
+#development-section a{
+	width: 90%;
+	font-size: 2.5rem;
+	text-align: center;
+}
+
+.btn{
+	width:150px;
+	font-size: 1.2rem;
+}
+
+/*----------columns----------*/
+
+	.col a  { margin-left: auto; margin-right: auto; }
+	.col-footer { margin: 3.2% 0 3.2% 1.6%; }
+	.col p { font-size: 1.6rem; }
+	.span_2_of_2, .span_1_of_2 { width: 100%; }
+	.span_3_of_3, .span_2_of_3, .span_1_of_3 { width: 100%; }
+	.span_4_of_4, .span_3_of_4, .span_2_of_4, .span_1_of_4 { width: 100%; }
+	.span_6_of_6, .span_5_of_6, .span_4_of_6, .span_3_of_6, .span_2_of_6, .span_1_of_6 { width: 100%; }
+	.span_1_of_12,.span_2_of_12,.span_3_of_12,.span_4_of_12,.span_5_of_12,.span_6_of_12,.span_7_of_12,.span_8_of_12,.span_9_of_12,.span_10_of_12,.span_11_of_12,.span_12_of_12 { width:100%; }
+}
