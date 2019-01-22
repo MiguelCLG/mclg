@@ -5,25 +5,12 @@ export default class Home extends Component{
   render(){
     return(
       <div id="HomePage">
-        <div className="first-section">
+        <div className="first-section bg-orange">
           <div className="section-content">
-            <h1 className="text-white">Heading Title</h1>
-            <p className="text-white">
-              Lorem ipsum dolor sit amet, consect tur adipiscing elit.
-            </p>
+
           </div>
         </div>
-        <div className="second-section bg-low-blue">
-          <div className="section-content">
-            <h2 className="text-charcoal text-center">Heading Title</h2>
-            <span className="space-32"></span>
-            <p className="text-charcoal text-center text-bold">
-              Lorem ipsum dolor sit amet, consect tur adipiscing elit.
-            </p>
-            <span className="space-32"></span>
-            <div className="btn orange">Click to learn more</div>
-          </div>
-        </div>
+
         <div id="about-section" className="third-section bg-purple">
           <div className="section-content">
             <h2 className="text-white text-center">About</h2>

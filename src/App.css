@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'personal_servicesregular';
+    src: url('./fonts/personalservices-webfont.woff2') format('woff2'),
+         url('./fonts/personalservices-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 /*----------css-reset----------*/
 
 html, body, div, span, applet, object, iframe,
@@ -218,11 +225,18 @@ p, a, span, .btn {
 .bg-orange{
   background-color:rgba(224,89,21,1);
 }
+.bg-red{
+	background-color: rgba(190, 26, 34, 1);
+}
 .bg-charcoal{
   background-color:rgba(33,33,33,1);
 }
 .bg-white{
   background-color:rgba(255,255,255,1);
+}
+.bg-black{
+  background-color:rgba(0,0,0,1);
+
 }
 .bg-grey{
   background-color:rgba(155,155,155,1)
@@ -274,26 +288,39 @@ p, a, span, .btn {
 /********* Buttons **********/
 
 .btn{
-  border-radius: 20px;
   cursor: pointer;
-  margin: 12px auto;
-  padding: 12px 24px;
+  display: block;
+  font-family:'personal_servicesregular', 'Lato', Helvetica, sans-serif;
+  font-size: 16px;
+  left:50%;
+  margin-top: 10px;
+  padding: 8px;
+  position: relative;
   text-align: center;
-  text-transform: uppercase;
+  text-decoration: none;
+  transform: rotate(-3deg) skew(-12deg) translateX(-50%);
+  transition: .2s all linear;
   width: 200px;
-  font-weight: bold;
-  transition:.3s all;
 }
 .btn.orange{
-  background-color:rgba(224,89,21,1);
-  border:2px solid rgba(255,255,255,0);
-  color:rgba(255,255,255,1);
+  background-color: rgba(224,89,21,1);
+  border: 10px solid rgba(0,0,0,1);
+  color: #ffffff;
 }
 
 .btn.orange:hover{
-  background-color:rgba(255,255,255,1);
-  border-color:rgba(224,89,21,1);
-  color:rgba(224,89,21,1);
+  background-color:rgba(190,26,34,1);
+}
+.btn.white{
+  background-color: rgba(255,255,255,1);
+  border: 10px solid rgba(0,0,0,1);
+  color: #000000;
+}
+
+.btn.white:hover{
+  background-color: rgba(0,0,0,1);
+  border: 10px solid rgba(255,255,255,1);
+  color: #ffffff;
 }
 
 /********Nav Menu********/
@@ -342,29 +369,93 @@ p, a, span, .btn {
 }
 
 /* The navigation menu links */
-.sideNav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
+.sideNav .nav-link {
+  background-color: rgba(224,89,21,1);
+  border: 10px solid rgba(0,0,0,1);
   color: #d1d1d1;
   display: block;
-  transition: 0.3s;
-  text-align: left;
+  font-family:'personal_servicesregular', 'Lato', Helvetica, sans-serif;
+  font-size: 25px;
+  left:10px;
+  margin-top: 10px;
+  padding: 8px;
+  position: relative;
+  text-align: right;
+  text-decoration: none;
+  transition: .2s all linear;
+  transform: rotate(-6deg) skew(-20deg);
+}
+
+.sideNav .nav-link:hover{
+  animation: wiggle .1s forwards;
+}
+
+.sideNav .nav-link.active-link{
+  background-color: rgba(190, 26, 34, 1);
+  font-size: 30px;
+  left: 50px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  transform: rotate(-12deg) skew(-20deg);
+  transition: .2s all linear;
+}
+.sideNav .nav-link.active-link:hover{
+  animation: wiggle-active .1s forwards;
 }
 
 /* When you mouse over the navigation links, change their color */
-.sideNav a:hover {
+.sideNav .nav-link:hover {
   color: #ffffff;
 }
 
 .sideNavLinks{
   padding:32px 0;
+  transition:.4s all;
 }
 .nav-bg{
   position: absolute;
   bottom: 0;
-  height: 70%;
-  width: 100%;
+  height: 95%;
+  width: 95%;
+}
+.nav-bg-border{
+  bottom: 0;
+  height: 40%;
+  margin-left: -2%;
+  position: absolute;
+  -webkit-transform: skewX(-2deg);
+  transform: skewX(-2deg);
+  width: 105%;
+}
+
+.nav-contact-info {
+  position: absolute;
+    top: 30%;
+    padding: 0 10% 0 10%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) rotate(-6deg);
+    transform: translateX(-50%) rotate(-6deg);
+}
+
+.nav-contact-info a{
+  border:none;
+  color: #ffffff;
+  display: block;
+  font-family:'Lato', Helvetica, sans-serif;
+  font-size:18px;
+  margin-top: 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: .2s all linear;
+}
+.info-text {
+  text-align: center;
+  font-family: 'personal_servicesregular', 'Lato', Helvetica, sans-serif;
+  font-size:12px;
+  border: 5px solid black;
+  margin: 10px 0;
+  transform: skew(-12deg);
 }
 
 .clip-left-to-right{
@@ -391,15 +482,11 @@ p, a, span, .btn {
 }
 
 .first-section{
-	background-blend-mode: multiply;
-  background:url("./images/home-header.jpg");
+  background-image:url("./images/home-banner-v2.png");
   background-position: center;
   background-size: cover;
-	background-color: rgba(194,221,230,1);
-	clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
   height: 100%;
 	position: relative;
-  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
 	width: 100%;
 }
 
@@ -757,4 +844,24 @@ p, a, span, .btn {
 
 .padding-32 {
 	padding: 32px;
+}
+
+
+/********** Animations **********/
+
+@keyframes wiggle{
+  0%{
+    left:10px;
+  }
+  100%{
+    left:50px;
+  }
+}
+@keyframes wiggle-active{
+  0%{
+    left:50px;
+  }
+  100%{
+    left:75px;
+  }
 }

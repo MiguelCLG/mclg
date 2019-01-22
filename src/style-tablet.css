@@ -93,6 +93,15 @@
 		font-size: 1.8rem;
 	}
 
+/************* NAV **************/
+
+.sideNav .nav-link{
+	text-align: center;
+	left: 0;
+}
+.sideNav .nav-link.active-link{
+	left:0;
+}
 	/*----------sections----------*/
 
 .first-section .section-content, .second-section .section-content, .third-section .section-content{
