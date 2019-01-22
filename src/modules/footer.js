@@ -40,7 +40,7 @@ export default class Footer extends Component{
                     <textarea data-validation="contactMessage"  type="text" name="contactMessage" maxLength="255" placeholder="Leave me a message"></textarea>
                   </div>
                   <div className="form-inputs">
-                    <input className="btn white round-corner-4" type="submit" name="cf-submit" value="Send Message"/>
+                    <input className="btn orange round-corner-4" type="submit" name="cf-submit" value="Send Message"/>
                   </div>
                   </form>
                   </div>
