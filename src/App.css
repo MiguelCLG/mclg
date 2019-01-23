@@ -78,6 +78,16 @@ html,body{
   clear: both;
   font-family: "Open Sans", Helvetica, sans-serif;
 }
+
+.font-persona{
+  font-family: 'personal_servicesregular', 'Lato', Helvetica, sans-serif;
+}
+.font-lato{
+  font-family: 'Lato', Helvetica, sans-serif;
+}
+.font-open-sans{
+  font-family: 'Open Sans', Helvetica, sans-serif;
+}
 .App {
   height: 100vh;
   transition:.5s;
@@ -112,7 +122,7 @@ html,body{
 /**************** Typography *****************/
 
 h1,h2,h3,h4,h5{
-  font-family: "Lato", sans-serif;
+  font-family:'personal_servicesregular', 'Lato', Helvetica, sans-serif;
 }
 p,a{
   font-family: "Open Sans", sans-serif;
@@ -372,7 +382,7 @@ p, a, span, .btn {
 .sideNav .nav-link {
   background-color: rgba(224,89,21,1);
   border: 10px solid rgba(0,0,0,1);
-  color: #d1d1d1;
+  color: #ffffff;
   display: block;
   font-family:'personal_servicesregular', 'Lato', Helvetica, sans-serif;
   font-size: 25px;
@@ -468,6 +478,16 @@ p, a, span, .btn {
   clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 100%);
 }
 
+.heading{
+  text-align: center;
+  height:10vh;
+}
+.heading h1{
+  position: relative;
+  top:50%;
+  transform:translateY(-50%);
+}
+
 /*********Main Content**********/
 
 #HomePage, .main-body{
@@ -480,12 +500,18 @@ p, a, span, .btn {
   bottom: 0;
   transition:.5s all;
 }
-
+#development-page{
+  width:100%;
+  height:100%;
+}
+.game-section{
+  height:100vh;
+}
 .first-section{
   background-image:url("./images/home-banner-v2.png");
   background-position: center;
   background-size: cover;
-  height: 100%;
+  height: 100vh;
 	position: relative;
 	width: 100%;
 }
@@ -504,7 +530,6 @@ p, a, span, .btn {
   padding:164px 0 128px 0;
   position:relative;
   width: 100%;
-  margin-top: -95px;
   z-index: 0;
 }
 .fourth-section{
@@ -527,6 +552,35 @@ p, a, span, .btn {
   bottom:32px;
   left:50%;
   transform:translateX(-50%);
+}
+
+.game-thumbnails{width:100%;}
+.game-cols{
+  text-align:center;
+  margin:1.6% 0 1.6% 3.2%;
+  display: block;
+  float: left;
+  position: relative;
+}
+.game-cols:first-child{
+  margin-left:0;
+}
+.game-cols a{
+  text-decoration:none;
+}
+
+#game-container{
+  max-width:960px;
+  height: auto;
+  position: relative;
+  top:50%;
+  left:50%;
+  transform:translateX(-50%) translateY(-50%);
+}
+#\#canvas {
+    width: 100%;
+    min-width: 800px;
+    min-height:600px;
 }
 
 /*----------footer----------*/

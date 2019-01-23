@@ -42,6 +42,7 @@ export default class Header extends Component{
   changeActive(x){
     $(".sideNav a.active-link").removeClass("active-link");
     $(".sideNav a").eq(x).addClass("active-link");
+    this.props.navigation(x);
   }
   render(){
     return(
@@ -56,8 +57,8 @@ export default class Header extends Component{
             <div className="sideNavLinks">
               <a className="nav-link active-link" href="/#" onClick={(e)=>this.changeActive(0)}>Home </a>
               <a className="nav-link" href="/#about-section" onClick={(e)=>this.changeActive(1)}>About</a>
-              <a className="nav-link" href="/#development-section" onClick={(e)=>this.changeActive(2)}>Web Dev</a>
-              <a className="nav-link" href="/#development-section" onClick={(e)=>this.changeActive(3)}>Game Dev</a>
+              <a className="nav-link" href="/#" onClick={(e)=>this.changeActive(2)}>Web Dev</a>
+              <a className="nav-link" href="/#" onClick={(e)=>this.changeActive(3)}>Game Dev</a>
               <a className="nav-link" href="/#footer" onClick={(e)=>this.changeActive(4)}>Contact</a>
             </div>
           </div>
