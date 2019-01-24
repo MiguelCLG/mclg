@@ -6,6 +6,7 @@ import './style-mobile.css';
 import Header from './modules/header';
 import Home from './modules/home-page';
 import GameDev from './modules/gamedev-page';
+import WebDev from './modules/webdev-page';
 import KnightlyDuels from './modules/games/knightly-duels';
 import SpaceInvaders from './modules/games/space-invaders';
 
@@ -41,7 +42,11 @@ toggleGame(index)
     6 - Space Invaders
      */
     let page;
-    if (this.state.page === 3)
+    if (this.state.page === 2)
+    {
+      page = <WebDev />
+    }
+    else if (this.state.page === 3)
     {
       page = <GameDev navigation={this.toggleGame.bind(this)} />
     }

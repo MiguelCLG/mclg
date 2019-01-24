@@ -253,15 +253,15 @@ p, a, span, .btn {
 }
 
 .bg-webdev{
-  background-image:url("./images/WebDev-banner.png");
-  background-size:auto 100%;
+  background:url("./images/webdev.jpg");
+  background-size:cover;
   background-position: bottom center;
   background-repeat: no-repeat;
   height:100%;
 }
 .bg-gamedev{
-  background-image:url("./images/GameDev-banner3.png");
-  background-size:auto 100%;
+  background:url("./images/gamedev-v2.jpg");
+  background-size:cover;
   background-position: bottom center;
   background-repeat: no-repeat;
   height:100%;
@@ -490,7 +490,7 @@ p, a, span, .btn {
 
 /*********Main Content**********/
 
-#HomePage, .main-body, #development-page, #web-development-page{
+#HomePage, .main-body{
   width: 100%;
   height: auto;
   position: absolute;
@@ -500,12 +500,16 @@ p, a, span, .btn {
   bottom: 0;
   transition:.5s all;
 }
+.main-content{
+  width:100vw;
+  height:100vh;
+}
 #development-page{
   width:100%;
   height:100%;
 }
 .game-section{
-  height:auto;
+  height:100vh;
 }
 .first-section{
   background-image:url("./images/home-banner-v2.png");
@@ -515,11 +519,9 @@ p, a, span, .btn {
 	position: relative;
 	width: 100%;
 }
+
 #development-page .first-section{
-  background-image:url("./images/home-banner-v3.png");
-}
-#web-development-page .first-section{
-  background-image:url("./images/home-banner-v1.png");
+  background-image:url("./images/home-banner-v3.png")
 }
 
 .second-section{
@@ -554,21 +556,13 @@ p, a, span, .btn {
   position:absolute;
   color:#ffffff;
 	text-decoration: none;
-  font-size:4rem;
-  top:32px;
+  font-size:3rem;
+  bottom:32px;
   left:50%;
   transform:translateX(-50%);
 }
 
-.game-thumbnails{
-  width: calc(100% - 20px);
-  border: 10px solid black;
-  transition: .2s all ease-in;
-
-}
-.game-thumbnails:hover{
-  border-color:white;
-}
+.game-thumbnails{width:100%;}
 .game-cols{
   text-align:center;
   margin:1.6% 0 1.6% 3.2%;
@@ -583,13 +577,6 @@ p, a, span, .btn {
   text-decoration:none;
 }
 
-div.pop-up{
-  font-size:1.6rem;
-  cursor:pointer;
-}
-div.pop-up h5{
-  margin-top:8px;
-}
 #game-container{
   max-width:960px;
   height: auto;
@@ -919,9 +906,6 @@ div.pop-up h5{
 
 .padding-32 {
 	padding: 32px;
-}
-.padding-top-64 {
-	padding-top: 64px;
 }
 
 

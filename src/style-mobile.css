@@ -4,22 +4,23 @@
 @media only screen and (max-width:667px)
 {
 	/* sections */
-	.first-section{
+	/*.first-section{
 		-webkit-clip-path: polygon(0 0, 100% 0%, 100% 95%, 0% 100%);
 		clip-path: polygon(0 0, 100% 0%, 100% 95%, 0% 100%);
 	}
 	.second-section{
 		clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
 		-webkit-clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
-	}
+	}*/
 	#development-section .bg-gamedev, #development-section .bg-webdev{
-		z-index: 1000;
+		z-index: 995;
 	}
 
 	.group {
 		display:block;
 	}
 		.col-footer:first-child { margin-top:32px; }
+			.game-cols{margin:0;margin-bottom:32px;}
 }
 @media only screen and (max-width:480px) {
 

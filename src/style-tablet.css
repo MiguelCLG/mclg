@@ -110,16 +110,16 @@
 .section-content{
 	max-width:667px;
 }
-.first-section{
+/*.first-section{
 	-webkit-clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
 	clip-path: polygon(0 0, 100% 0%, 100% 93%, 0% 100%);
 }
 .second-section{
 	clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
 	-webkit-clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
-}
+}*/
 #development-section .bg-gamedev, #development-section .bg-webdev{
-	z-index: 1000;
+	z-index: 995;
 }
 #development-section a{
 	width: 90%;

@@ -7,7 +7,6 @@ export default class Home extends Component{
       <div id="HomePage">
         <div className="first-section bg-orange">
           <div className="section-content">
-
           </div>
         </div>
 
@@ -24,8 +23,8 @@ export default class Home extends Component{
         </div>
         <div id="development-section" className="fourth-section">
           <div className="group">
-            <div className="col span_1_of_2 bg-webdev"><a href="/#">Web Development</a></div>
-            <div className="col span_1_of_2 bg-gamedev"><a href="/#">Game Development</a></div>
+            <div className="col span_1_of_2 bg-webdev bg-red"><a className="font-persona" href="/#">Web Development</a></div>
+            <div className="col span_1_of_2 bg-gamedev bg-orange"><a className="font-persona" href="/#">Game Development</a></div>
           </div>
         </div>
         <Footer />
