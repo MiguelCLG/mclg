@@ -23,7 +23,7 @@ export default class Header extends Component{
           <div className="nav-bg-border bg-black clip-left-to-right">
             <div className="nav-bg bg-orange clip-left-to-right">
               <div className="nav-contact-info">
-                <p className="info-text bg-red">Email</p><a href="mailto:miguelclg@hotmail.com">MiguelCLG@hotmail.com</a>
+                <p className="info-text bg-red">Email</p><a href="mailto:miguel@m-clg.com">miguel@m-clg.com</a>
                 <p className="info-text bg-red">Mobile</p><a href="tel:07341323979">07341323979</a>
 
               </div>

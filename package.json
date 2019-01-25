@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "emailjs-com": "^2.3.2",
     "jquery": "^3.3.1",
     "npm": "^6.6.0",
     "react": "^16.7.0",
@@ -11,9 +12,9 @@
     "react-unity-webgl": "^7.0.8"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-scripts start --env=jsdom",
+    "build": "react-scripts build --env=jsdom",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

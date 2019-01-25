@@ -142,7 +142,7 @@ togglePopup(x){
         <div className="main-body">
           <Header navigation={this.togglePage.bind(this)} changeActive={this.changeActive.bind(this)} toggleMenu={this.toggleMenu.bind(this)}/>
           {page}
-          <Footer changeActive={this.changeActive.bind(this)}/>
+          <Footer env={this.props.env} changeActive={this.changeActive.bind(this)}/>
         </div>
       </div>
     );

@@ -684,6 +684,18 @@ div.pop-up h5{
 	width:100%;
 }
 
+.verify-send {
+    background: rgba(80,255,60,1);
+    padding: 12px;
+    text-align: center;
+    margin: 12px 0 0 0;
+    border: 5px solid;
+    transform: rotateZ(-3deg);
+    transition:.4s all;
+    visibility: hidden;
+    position:relative;
+}
+
 .site-map{
   cursor: pointer;
   text-decoration: underline;
