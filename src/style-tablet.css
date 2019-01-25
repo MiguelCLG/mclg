@@ -132,6 +132,10 @@
 	font-size: 1.2rem;
 }
 
+.popup-panel .wrapper{
+  width: 90%;
+}
+
 /*----------columns----------*/
 
 	.col a  { margin-left: auto; margin-right: auto; }

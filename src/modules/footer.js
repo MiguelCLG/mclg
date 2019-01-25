@@ -10,24 +10,24 @@ export default class Footer extends Component{
             <div className="page-inner-wrapper">
               <div className="section group">
                 <div className="col-footer span_1_of_3">
-                    <h3 className="text-white ">About</h3>
+                    <h3 className="text-orange ">About</h3>
                     <div className="underline-after bg-orange"></div>
                     <p className="space-after-12 text-white text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id velit dictum, dictum leo eu, efficitur magna. Phasellus pharetra purus venenatis, consectetur ante ut, auctor orci.</p>
-                    <p className="space-after-12 text-white text-light">Miguel Carlos Lucas Gonçalves <br/> 460, Hitchin Road <br/> Luton, LU2 7ST <br/>Bedfordshire </p>
+                    <p className="space-after-12 text-white text-light">Miguel Gonçalves</p>
                     <p className="space-after-12 text-white text-light">Telephone: <a href="tel:+447341323979">07341 323979</a></p>
                     <p className="space-after-24 text-white text-light">Email: <a href="mailto:miguelclg@hotmail.com">miguelclg@hotmail.com</a></p>
                 </div>
                 <div className="col-footer span_1_of_3">
-                  <h3 className="text-white">Site map</h3>
+                  <h3 className="text-orange">Site map</h3>
                   <div className="underline-after bg-orange"></div>
-                  <p className="text-light"><a className="scroll" href="/#">Home</a></p>
-                  <p className="text-light"><a className="scroll" href="/#">About Us</a></p>
-                  <p className="text-light"><a className="scroll" href="/#">Web Development</a></p>
-                  <p className="text-light"><a className="scroll" href="/#">Game Development</a></p>
-                  <p className="text-light"><a className="scroll" href="/#">Contact</a></p>
+                  <div className="site-map" onClick={(e)=>this.props.changeActive(0)}><p className="text-light">Home</p></div>
+                  <div className="site-map" onClick={(e)=>this.props.changeActive(1)}><p className="text-light">About Us</p></div>
+                  <div className="site-map" onClick={(e)=>this.props.changeActive(2)}><p className="text-light">Web Development</p></div>
+                  <div className="site-map" onClick={(e)=>this.props.changeActive(3)}><p className="text-light">Game Development</p></div>
+                  <div className="site-map" onClick={(e)=>this.props.changeActive(4)}><p className="text-light">Contact</p></div>
                 </div>
                 <div className="col-footer span_1_of_3">
-                  <h3 className="text-white">Get in touch</h3>
+                  <h3 className="text-orange">Get in touch</h3>
                   <div className="underline-after bg-orange"></div>
                   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                   <div className="form-inputs">

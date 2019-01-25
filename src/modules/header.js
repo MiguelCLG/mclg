@@ -1,53 +1,11 @@
 import React, {Component} from 'react';
-import $ from 'jquery';
 
 export default class Header extends Component{
-  toggleMenu(x){
-    if(x.target.classList.contains("hamburguer"))
-    {
-        x.target.classList.toggle("change");
-    }
-    else if (x.target.parentElement.classList.contains ("hamburguer"))
-    {
-      x.target.parentElement.classList.toggle("change");
-    }
-    if(x.target.classList.contains("change") || x.target.parentElement.classList.contains("change")){
-      if(parseFloat($(".main-body").css("width")) < 668){
-        document.getElementById("nav").style.width = "100%";
-        document.getElementsByClassName("main-body")[0].style.marginLeft = "0";
-      }
-      else{
-        document.getElementById("nav").style.width = "250px";
-        document.getElementsByClassName("main-body")[0].style.marginLeft = "250px";
-        $(".sideNav").css("overflow-x", "visible");
-        if(!$(".sideNav a").hasClass("active-link")){
-          $(".sideNav a").css("margin", "10px -10px 10px 10px");
-        }
-      }
-      $(".main-body").eq(0).css("width", parseFloat($(".main-body").eq(0).css("width")) - 250 + "px");
 
-    }
-    else{
-      document.getElementById("nav").style.width = "0";
-      document.getElementsByClassName("main-body")[0].style.marginLeft = "0";
-      $(".main-body").eq(0).css("width", "100%");
-      $(".sideNav").css("overflow-x", "hidden");
-      if(!$(".sideNav a").hasClass("active-link")){
-        $(".sideNav a").css("margin", "0");
-      }
-
-    }
-  }
-
-  changeActive(x){
-    $(".sideNav a.active-link").removeClass("active-link");
-    $(".sideNav a").eq(x).addClass("active-link");
-    this.props.navigation(x);
-  }
   render(){
     return(
       <header className="App-header">
-        <div className="hamburguer" onClick={(e)=>this.toggleMenu(e)}>
+        <div className="hamburguer" onClick={(e)=>this.props.toggleMenu(e)}>
           <div className="bar1"></div>
           <div className="bar2"></div>
           <div className="bar3"></div>
@@ -55,11 +13,11 @@ export default class Header extends Component{
         <div id="nav" className="sideNav bg-purple">
           <div className="sideNavBg bg-purple">
             <div className="sideNavLinks">
-              <a className="nav-link active-link" href="/#" onClick={(e)=>this.changeActive(0)}>Home </a>
-              <a className="nav-link" href="/#about-section" onClick={(e)=>this.changeActive(1)}>About</a>
-              <a className="nav-link" href="/#" onClick={(e)=>this.changeActive(2)}>Web Dev</a>
-              <a className="nav-link" href="/#" onClick={(e)=>this.changeActive(3)}>Game Dev</a>
-              <a className="nav-link" href="/#footer" onClick={(e)=>this.changeActive(4)}>Contact</a>
+              <div className="nav-link active-link" onClick={(e)=>this.props.changeActive(0)}>Home </div>
+              <div className="nav-link" onClick={(e)=>this.props.changeActive(1)}>About</div>
+              <div className="nav-link" onClick={(e)=>this.props.changeActive(2)}>Web Dev</div>
+              <div className="nav-link" onClick={(e)=>this.props.changeActive(3)}>Game Dev</div>
+              <div className="nav-link" onClick={(e)=>this.props.changeActive(4)}>Contact</div>
             </div>
           </div>
           <div className="nav-bg-border bg-black clip-left-to-right">

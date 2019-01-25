@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import Footer from './footer';
 export default class GameDev extends Component {
 
 
@@ -21,7 +20,6 @@ export default class GameDev extends Component {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     )
   }

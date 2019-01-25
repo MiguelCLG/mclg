@@ -96,7 +96,6 @@ html,body{
 
 .App-header {
   display: flex;
-  height:5vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -335,20 +334,21 @@ p, a, span, .btn {
 
 /********Nav Menu********/
 .hamburguer {
-  position:fixed;
-  top:32px;
-  left:32px;
-  display: inline-block;
   cursor: pointer;
-  z-index:10001;
+  display: inline-block;
+  left:32px;
+  top:32px;
+  position:fixed;
+  z-index:1001;
 }
 
 .bar1, .bar2, .bar3 {
-  width: 35px;
-  height: 5px;
   background-color: #FFFFFF;
+  cursor:pointer;
+  height: 5px;
   margin: 6px 0;
   transition: 0.4s;
+  width: 35px;
 }
 
 .change .bar1 {
@@ -362,19 +362,34 @@ p, a, span, .btn {
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
   transform: rotate(45deg) translate(-8px, -8px);
 }
+.popup-close{
+  display: inline-block;
+  height:auto;
+  position:fixed;
+  right:32px;
+  top:32px;
+  width: auto;
+}
 
+.popup-close .bar1{
+  -webkit-transform: rotate(-45deg) translate(0, 6px);
+  transform: rotate(-45deg) translate(0, 6px);
+}
+.popup-close .bar2{
+  -webkit-transform: rotate(45deg) translate(0, -9px);
+  transform: rotate(45deg) translate(0, -9px);
+}
 
 /******SIDENAV********/
 .sideNav {
   height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
   left: 0;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
+  position: fixed; /* Stay in place */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  top: 0; /* Stay at the top */
+  width: 0; /* 0 width - change this with JavaScript */
 	z-index: 1000;
 }
 
@@ -383,17 +398,18 @@ p, a, span, .btn {
   background-color: rgba(224,89,21,1);
   border: 10px solid rgba(0,0,0,1);
   color: #ffffff;
+  cursor:pointer;
   display: block;
   font-family:'personal_servicesregular', 'Lato', Helvetica, sans-serif;
   font-size: 25px;
   left:10px;
   margin-top: 10px;
-  padding: 8px;
+  padding: 16px 8px;
   position: relative;
   text-align: right;
   text-decoration: none;
-  transition: .2s all linear;
   transform: rotate(-6deg) skew(-20deg);
+  transition: .2s all linear;
 }
 
 .sideNav .nav-link:hover{
@@ -493,7 +509,7 @@ p, a, span, .btn {
 #HomePage, .main-body, #development-page, #web-development-page{
   width: 100%;
   height: auto;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
@@ -539,7 +555,13 @@ p, a, span, .btn {
   z-index: 0;
 }
 .fourth-section{
-  height:100%;
+  height: auto;
+  position: relative;
+  width: 100%;
+  z-index: 0;
+}
+.fourth-section .group{
+  height:100vh;
 }
 
 .section-content{
@@ -554,8 +576,8 @@ p, a, span, .btn {
   position:absolute;
   color:#ffffff;
 	text-decoration: none;
-  font-size:4rem;
-  top:32px;
+  font-size:3.5rem;
+  top:64px;
   left:50%;
   transform:translateX(-50%);
 }
@@ -613,7 +635,7 @@ div.pop-up h5{
 	z-index:1;
 }
 .footer {
-	background-color: rgba(58,55,53,1);
+	background-color: rgba(233,233,233,1);
 }
 
 .footer input[type=text], .footer input[type=password], .footer input[type=email], .footer select, .footer textarea {
@@ -641,13 +663,16 @@ div.pop-up h5{
 }
 
 .footer a {
-	color: rgba(255,255,255,.65);
+	color: rgba(33,33,33,1);
 	text-decoration: underline;
 }
 
 .footer a:hover {
-	color: rgba(255,255,255,1);
+	color: rgba(0,0,0,1);
 	text-decoration: none;
+}
+.footer p{
+  color:rgba(0,0,0,1);
 }
 
 .footer h2:after {
@@ -659,6 +684,13 @@ div.pop-up h5{
 	width:100%;
 }
 
+.site-map{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.site-map:hover{
+  text-decoration: none;
+}
 /******** Miscelaneous ***********/
 
 .space-32
@@ -922,6 +954,38 @@ div.pop-up h5{
 }
 .padding-top-64 {
 	padding-top: 64px;
+}
+
+
+/*********** PopUp **************/
+
+.popup-panel {
+    background-color: rgba(0,0,0,0.9);
+    height: 100vh;
+    position: fixed;
+    top:0;
+    width: 100vw;
+    transition: .4s ease-in;
+    z-index: 1002;
+}
+.popup-panel .wrapper{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  padding:32px;
+  transform: translateX(-50%) translateY(-50%);
+  width: 50%;
+}
+.popup-image {
+    text-align: center;
+}
+.popup-image img{
+  width:100%;
+}
+.popup-heading-text, .popup-description {
+    text-align: center;
+    color: white;
+    margin: 32px 0;
 }
 
 
