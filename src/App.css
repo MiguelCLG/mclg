@@ -461,6 +461,7 @@ p, a, span, .btn {
     left: 50%;
     -webkit-transform: translateX(-50%) rotate(-6deg);
     transform: translateX(-50%) rotate(-6deg);
+    width: 90%;
 }
 
 .nav-contact-info a{
