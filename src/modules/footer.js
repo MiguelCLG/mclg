@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
+import {Link} from 'react-router-dom';
 export default class Footer extends Component{
 constructor(props){
   super(props);
@@ -73,7 +73,7 @@ constructor(props){
         })
         // Handle errors here however you like, or use a React error boundary
         .catch(err => console.error('Failed to send feedback. Error: ', err))
-        $(".verify-send").fadeIn(500, function(){$(this).fadeOut(500);});
+        //$(".verify-send").fadeIn(500, function(){$(this).fadeOut(500);});
   }
   render(){
     return(
@@ -85,7 +85,8 @@ constructor(props){
                 <div className="col-footer span_1_of_3">
                     <h3 className="text-orange ">About</h3>
                     <div className="underline-after bg-orange"></div>
-                    <p className="space-after-12 text-white text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id velit dictum, dictum leo eu, efficitur magna. Phasellus pharetra purus venenatis, consectetur ante ut, auctor orci.</p>
+                    <p className="space-after-12 text-white text-light">My name is Miguel Gonçalves, I am a Portuguese developer with a passion to make things "tick".<br/>
+                    Computer programming has always been my calling and I've been working towards becoming the best I can be.<br/></p>
                     <p className="space-after-12 text-white text-light">Miguel Gonçalves</p>
                     <p className="space-after-12 text-white text-light">Telephone: <a href="tel:+447341323979">07341 323979</a></p>
                     <p className="space-after-24 text-white text-light">Email: <a href="mailto:miguel@m-clg.com">miguel@m-clg.com</a></p>
@@ -93,17 +94,15 @@ constructor(props){
                 <div className="col-footer span_1_of_3">
                   <h3 className="text-orange">Site map</h3>
                   <div className="underline-after bg-orange"></div>
-                  <div className="site-map" onClick={(e)=>this.props.changeActive(0)}><p className="text-light">Home</p></div>
-                  <div className="site-map" onClick={(e)=>this.props.changeActive(1)}><p className="text-light">About Us</p></div>
-                  <div className="site-map" onClick={(e)=>this.props.changeActive(2)}><p className="text-light">Web Development</p></div>
-                  <div className="site-map" onClick={(e)=>this.props.changeActive(3)}><p className="text-light">Game Development</p></div>
-                  <div className="site-map" onClick={(e)=>this.props.changeActive(4)}><p className="text-light">Contact</p></div>
+                  <Link className="site-map"  to="/"><p className="text-light">Home</p></Link>
+                  <Link className="site-map"  to="/webdev"><p className="text-light">Web Development</p></Link>
+                  <Link className="site-map"  to="/gamedev"><p className="text-light">Game Development</p></Link>
                 </div>
                 <div className="col-footer span_1_of_3">
                   <h3 className="text-orange">Get in touch</h3>
                   <div className="underline-after bg-orange"></div>
 
-                  <form className="contact-form" onSubmit={this.handleSubmit} >
+                  <form id="contact" className="contact-form" onSubmit={this.handleSubmit} >
                     <div className="form-inputs">
                       <input
                       data-validation="fullname"

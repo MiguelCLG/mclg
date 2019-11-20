@@ -385,7 +385,7 @@ p, a, span, .btn {
   height: 100%; /* 100% Full-height */
   left: 0;
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
+  /*padding-top: 60px; /* Place content 60px from the top */
   position: fixed; /* Stay in place */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
   top: 0; /* Stay at the top */
@@ -416,7 +416,7 @@ p, a, span, .btn {
   animation: wiggle .1s forwards;
 }
 
-.sideNav .nav-link.active-link{
+.sideNav .nav-link.active{
   background-color: rgba(190, 26, 34, 1);
   font-size: 30px;
   left: 50px;
@@ -425,7 +425,7 @@ p, a, span, .btn {
   transform: rotate(-12deg) skew(-20deg);
   transition: .2s all linear;
 }
-.sideNav .nav-link.active-link:hover{
+.sideNav .nav-link.active:hover{
   animation: wiggle-active .1s forwards;
 }
 
@@ -434,6 +434,11 @@ p, a, span, .btn {
   color: #ffffff;
 }
 
+.sideNavContainer{
+  position:relative;
+  width: 100%;
+  height:100%;
+}
 .sideNavLinks{
   padding:32px 0;
   transition:.4s all;
@@ -446,14 +451,16 @@ p, a, span, .btn {
 }
 .nav-bg-border{
   bottom: 0;
-  height: 40%;
+  height: 50%;
   margin-left: -2%;
-  position: absolute;
+  position: relative;
   -webkit-transform: skewX(-2deg);
   transform: skewX(-2deg);
   width: 105%;
 }
-
+.sideNavBg{
+  position:relative;
+}
 .nav-contact-info {
   position: absolute;
     top: 30%;
@@ -631,7 +638,6 @@ div.pop-up h5{
 
 #footer {
 	bottom:0;
-	position:relative;
 	width:100%;
 	z-index:1;
 }

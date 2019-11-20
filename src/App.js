@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
+import {Route, Switch} from 'react-router-dom';
+
 import './App.css';
 import './style-tablet.css';
 import './style-mobile.css';
@@ -25,14 +26,14 @@ constructor(props)
     popup:false,
     json: popupJson
   }
-  this.togglePage.bind(this);
   this.toggleGame.bind(this);
   this.toggleMenu.bind(this);
-  this.changeActive.bind(this);
   this.togglePopup.bind(this);
 
 }
 toggleMenu(x){
+  let mainBodyElement = document.getElementsByClassName("main-body")[0];
+  let sideNavElementLink = document.getElementsByClassName("nav-link");
   if(x.target.classList.contains("hamburguer"))
   {
       x.target.classList.toggle("change");
@@ -44,29 +45,42 @@ toggleMenu(x){
   if(x.target.classList.contains("change") || x.target.parentElement.classList.contains("change")){
     if(window.innerWidth < 668){
       document.getElementById("nav").style.width = "100%";
-      document.getElementsByClassName("main-body")[0].style.marginLeft = "0";
+      mainBodyElement.style.marginLeft = "0";
+      for (var i=0; i < sideNavElementLink.length; i++){
+        sideNavElementLink[i].style.margin = "40px auto";
+        sideNavElementLink[i].style.width = "50%";
+
+      }
       this.setState({menu: true});
 
     }
     else{
       document.getElementById("nav").style.width = "250px";
-      document.getElementsByClassName("main-body")[0].style.marginLeft = "250px";
-      $(".sideNav").css("overflow-x", "visible");
-      if(!$(".sideNav a").hasClass("active-link")){
-        $(".sideNav a").css("margin", "10px -10px 10px 10px");
+      mainBodyElement.style.marginLeft = "250px";
+      document.getElementsByClassName("sideNav")[0].style.overflowX = "visible";
+      //$(".sideNav").css("overflow-x", "visible");
+      for (i=0; i < sideNavElementLink.length; i++){
+        if(!sideNavElementLink[i].classList.contains("active")){
+          sideNavElementLink[i].style.margin = "10px -10px 40px 10px";
+          sideNavElementLink[i].style.width = "100%";
+
+        }
       }
       this.setState({menu: true});
     }
-    $(".main-body").eq(0).css("width", parseFloat($(".main-body").eq(0).css("width")) - 250 + "px");
+    mainBodyElement.style.width = parseFloat(mainBodyElement.style.width) - 250 + "px";
 
   }
   else{
     document.getElementById("nav").style.width = "0";
     document.getElementsByClassName("main-body")[0].style.marginLeft = "0";
-    $(".main-body").eq(0).css("width", "100%");
-    $(".sideNav").css("overflow-x", "hidden");
-    if(!$(".sideNav a").hasClass("active-link")){
-      $(".sideNav a").css("margin", "0");
+    mainBodyElement.style.width = "100%";
+    document.getElementsByClassName("sideNav")[0].style.overflowX = "hidden";
+    for (i=0; i < sideNavElementLink.length; i++){
+      if(!sideNavElementLink[i].classList.contains("active")){
+        sideNavElementLink[i].style.margin = "0";
+      }
+      sideNavElementLink[i].style.width = "100%";
     }
     this.setState({menu: false});
 
@@ -74,23 +88,12 @@ toggleMenu(x){
   }
 }
 
-changeActive(x){
-  $(".sideNav div.active-link").removeClass("active-link");
-  $(".sideNav div.nav-link").eq(x).addClass("active-link");
-  this.togglePage(x);
-  if(this.state.menu && window.innerWidth <= 668)
-    {
-      $(".hamburguer").click();
-    }
-}
-togglePage(index)
-{
-  this.setState({page: index});
-}
+
 toggleGame(index)
 {
   this.setState({page:index});
 }
+
 togglePopup(x){
   if(this.state.popup)
   {
@@ -101,48 +104,25 @@ togglePopup(x){
     popup = <PopUp image={popupJson[x]["image"]} altimage={popupJson[x]["heading"]} headingtext={popupJson[x]["heading"]} description={popupJson[x]["description"]} togglePopup={(e) => this.togglePopup(e)}/>;
     this.setState({popup:true});
     if(this.state.menu)
-      $(".hamburguer").click();
+    document.getElementsByClassName("hamburguer")[0].click();
   }
 
 }
   render() {
-    /*
-  --------Pages--------
-    0 - HomePage
-    1 - AboutPage
-    2 - WebDevPage
-    3 - GameDevPage
-    4 - ContactPage
-  --------Games--------
-    5 - Knightly Duels
-    6 - Space Invaders
-     */
-    let page;
-    if (this.state.page === 2)
-    {
-      page = <WebDev popupState={this.state.popup} popup={popup} togglePopup={(e) => this.togglePopup(e)}/>
-    }
-    else if (this.state.page === 3)
-    {
-      page = <GameDev navigation={this.toggleGame.bind(this)} />
-    }
-    else if(this.state.page === 5)
-    {
-      page = <KnightlyDuels />;
-    }
-    else if(this.state.page === 6)
-    {
-      page = <SpaceInvaders />;
-    }
-    else{
-      page = <Home navigation={this.togglePage.bind(this)} changeActive={this.changeActive.bind(this)}/>;
-    }
+
     return (
       <div id="App" className="App bg-orange">
         <div className="main-body">
-          <Header navigation={this.togglePage.bind(this)} changeActive={this.changeActive.bind(this)} toggleMenu={this.toggleMenu.bind(this)}/>
-          {page}
-          <Footer env={this.props.env} changeActive={this.changeActive.bind(this)}/>
+          <Header toggleMenu={this.toggleMenu.bind(this)}/>
+          <Switch>
+            <Route exact path="/" component={(props)=> {return <Home />}} />
+            <Route exact path="/webdev" component={(props)=> {return <WebDev popupState={this.state.popup} popup={popup} togglePopup={(e) => this.togglePopup(e)}/>}} />
+            <Route exact path="/gamedev" component={(props)=> {return <GameDev />}} />
+            <Route exact path="/knight" component={(props)=> {return <KnightlyDuels />}} />
+            <Route exact path="/space-invaders" component={(props)=> {return <SpaceInvaders />}} />
+
+          </Switch>
+          <Footer env={this.props.env}/>
         </div>
       </div>
     );

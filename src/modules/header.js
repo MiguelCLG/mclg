@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-
-export default class Header extends Component{
+import {NavLink, withRouter} from 'react-router-dom'
+class Header extends Component{
 
   render(){
     return(
@@ -11,13 +11,12 @@ export default class Header extends Component{
           <div className="bar3"></div>
         </div>
         <div id="nav" className="sideNav bg-purple">
+          <div className="sideNavContainer">
           <div className="sideNavBg bg-purple">
             <div className="sideNavLinks">
-              <div className="nav-link active-link" onClick={(e)=>this.props.changeActive(0)}>Home </div>
-              <div className="nav-link" onClick={(e)=>this.props.changeActive(1)}>About</div>
-              <div className="nav-link" onClick={(e)=>this.props.changeActive(2)}>Web Dev</div>
-              <div className="nav-link" onClick={(e)=>this.props.changeActive(3)}>Game Dev</div>
-              <div className="nav-link" onClick={(e)=>this.props.changeActive(4)}>Contact</div>
+              <NavLink className="nav-link" exact to="/">Home </NavLink>
+              <NavLink className="nav-link" exact to="/webdev">Web Dev</NavLink>
+              <NavLink className="nav-link" exact to="/gamedev">Game Dev</NavLink>
             </div>
           </div>
           <div className="nav-bg-border bg-black clip-left-to-right">
@@ -30,7 +29,9 @@ export default class Header extends Component{
             </div>
           </div>
         </div>
+        </div>
       </header>
     );
   }
 }
+export default withRouter(Header);
